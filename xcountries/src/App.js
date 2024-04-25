@@ -13,7 +13,8 @@ function App() {
         var response = await axios.get("https://restcountries.com/v3.1/all")
         setData(response.data);
       } catch (err) {
-        return new Error("Failed to Fetch !", err);
+        //return new Error("Failed to Fetch !", err);
+        console.error("Failed to fetch")
     }
       
     })();
