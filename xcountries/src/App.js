@@ -9,9 +9,13 @@ function App() {
   const [data,setData]=useState([]);
   useEffect(() => {
     (async () => {
-      var response = await axios.get("https://restcountries.com/v3.1/all")
-      console.log(response.data);
-      setData(response.data);
+      try {
+        var response = await axios.get("https://restcountries.com/v3.1/all")
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+      
     })();
     
   })
