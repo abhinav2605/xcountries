@@ -12,9 +12,9 @@ function App() {
       try {
         var response = await axios.get("https://restcountries.com/v3.1/all")
         setData(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (err) {
+        return new Error("Failed to Fetch !", err);
+    }
       
     })();
     
